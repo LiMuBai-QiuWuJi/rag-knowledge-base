@@ -27,3 +27,4 @@ __pycache__/
 
 # Windows shortcuts
 *.lnk
+.chroma/
