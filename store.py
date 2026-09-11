@@ -28,7 +28,7 @@ def save_in_chroma(chunks: list[dict]):
     )
 
 
-def query_chroma(question_vector: list[float] = None, question_text: str = None, top_k: int = 5):
+def query_chroma(question_text: str = None, question_vector: list[float] = None, top_k: int = 5):
     """向量检索：支持传入向量或文本（文本会自动转向量）"""
     if question_text and not question_vector:
         from ingest import text_to_vector
@@ -79,10 +79,11 @@ def query_and_rerank(question_text: str = None, question_vector: list[float] = N
     注意：rerank 需要原始 query 文本，若仅传向量且 question_text 为空，则跳过 rerank。
     """
     results = query_chroma(
-        question_vector=question_vector,
         question_text=question_text,
-        top_k=vector_top_k
+        question_vector=question_vector,
+        top_k=vector_top_k,
     )
+    
     documents = results.get("documents", [[]])[0]
     if not documents:
         return []
@@ -93,14 +94,16 @@ def query_and_rerank(question_text: str = None, question_vector: list[float] = N
     return rerank_documents(question_text, documents, top_n=rerank_top_n)
 
 
-if __name__ == "__main__":
-    test_query = "1956年人工智能作为学科的诞生事件是什么？"
-    test_docs = [
-        "1950年，艾伦·图灵发表了开创性论文，提出了图灵测试。",
-        "1956年达特茅斯会议被认为是人工智能诞生的标志，约翰·麦卡锡等人首次提出人工智能一词。",
-        "1951年，图灵开发了第一个国际象棋程序。",
-        "1955年，逻辑理论家程序诞生，是第一个真正的AI程序。"
-    ]
-    ranked = rerank_documents(test_query, test_docs)
-    for item in ranked:
-        print(f"相关度分数: {item['score']:.4f}，文档: {item['text']}")
+# if __name__ == "__main__":
+#     test_query = "1956年人工智能作为学科的诞生事件是什么？"
+#     test_docs = [
+#         "1950年，艾伦·图灵发表了开创性论文，提出了图灵测试。",
+#         "1956年达特茅斯会议被认为是人工智能诞生的标志，约翰·麦卡锡等人首次提出人工智能一词。",
+#         "1951年，图灵开发了第一个国际象棋程序。",
+#         "1955年，逻辑理论家程序诞生，是第一个真正的AI程序。"
+#     ]
+#     ranked = rerank_documents(test_query, test_docs)
+#     for item in ranked:
+#         print(f"相关度分数: {item['score']:.4f}，文档: {item['text']}")
+
+

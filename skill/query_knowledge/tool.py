@@ -27,4 +27,6 @@ def query_knowledge(question: str, top_k: int = 5) -> str:
         score_text = f" 相关度：{item['score']:.4f}" if item['score'] is not None else ""
         chunks.append(f"[{i + 1}]{score_text}\n{item['text']}")
 
+    # print(f"{chunks}")
+
     return "\n\n".join(chunks)

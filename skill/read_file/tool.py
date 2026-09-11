@@ -7,7 +7,10 @@ def read_pdf(pdf_abs_path: str | Path) -> str:
         return "输入路径为空"
     try:
         pdfReader = PdfReader(pdf_abs_path)
-        file_data = pdfReader.pages[0].extract_text()
+        # 遍历所有页拼接，避免多页 PDF 只进第一页
+        file_data = ""
+        for page in pdfReader.pages:
+            file_data += (page.extract_text() or "") + "\n"
     except FileNotFoundError:
         return "文件不存在"
     except PermissionError:
@@ -18,7 +21,11 @@ def read_pdf(pdf_abs_path: str | Path) -> str:
         return f"读取PDF异常: {e}"
 
     # extract_text 对扫描件（图片型PDF）会返回 None，按空处理
-    if file_data == None or len(file_data) == 0:
+    if file_data == None or len(file_data.strip()) == 0:
+        # 文本为空但有图片 → 扫描件，pypdf 解不了，需要 OCR
+        img_count = sum(len(p.images) for p in pdfReader.pages)
+        if img_count > 0:
+            return f"疑似扫描件（图片型PDF），共 {img_count} 张图片，pypdf 无法提取文字，需用 OCR"
         return "文本内容为空"
     return file_data
 

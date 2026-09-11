@@ -1,0 +1,162 @@
+[
+  {
+    "question": "本文针对什么河流的水沙问题进行了研究？",
+    "answer_keywords": ["黄河"]
+  },
+  {
+    "question": "问题一使用了什么数学模型来分析含沙量与水位等的关系？",
+    "answer_keywords": ["线性多元回归", "多元回归", "回归方程", "线性回归"]
+  },
+  {
+    "question": "问题一中，含沙量被看作什么变量？",
+    "answer_keywords": ["因变量", "被解释变量"]
+  },
+  {
+    "question": "问题一中的自变量包括哪些？",
+    "answer_keywords": ["时间", "水位", "水流量", "流量"]
+  },
+  {
+    "question": "估算的近6年年总排沙量是多少？",
+    "answer_keywords": ["1.7158", "1.7158e12", "1.7158×10^12", "排沙量"]
+  },
+  {
+    "question": "估算的近6年年总水流量是多少？",
+    "answer_keywords": ["2.13315", "2.13315e15", "2.13315×10^15", "总水流量"]
+  },
+  {
+    "question": "含沙量与时间、水位、水流量呈现什么相关关系？",
+    "answer_keywords": ["正相关"]
+  },
+  {
+    "question": "问题二研究了水沙通量的哪三个特性？",
+    "answer_keywords": ["突变性", "季节性", "周期性"]
+  },
+  {
+    "question": "水沙通量的季节性变化规律是什么？",
+    "answer_keywords": ["1月至5月", "5月至8月", "8月至12月", "平稳", "上升", "下降"]
+  },
+  {
+    "question": "每年哪个月份水位和水流量变化尤为明显？",
+    "answer_keywords": ["3月", "三月份"]
+  },
+  {
+    "question": "问题三使用了什么预测模型来预测未来两年的水沙通量？",
+    "answer_keywords": ["季节性ARIMA", "ARIMA", "时间序列"]
+  },
+  {
+    "question": "未来两年的最优采样监测方案是怎样的？",
+    "answer_keywords": ["1月至5月", "5月至8月", "监测", "平均值", "每月"]
+  },
+  {
+    "question": "问题四研究了小浪底水库什么措施的实际效果？",
+    "answer_keywords": ["调水调沙"]
+  },
+  {
+    "question": "调水调沙一般在每年的什么时候进行？",
+    "answer_keywords": ["6月", "7月", "六七月份"]
+  },
+  {
+    "question": "进行调水调沙后，水沙通量呈现什么趋势？",
+    "answer_keywords": ["递减", "降低", "减少"]
+  },
+  {
+    "question": "如果不进行调水调沙，水沙通量会呈现什么趋势？",
+    "answer_keywords": ["递增", "升高", "增加"]
+  },
+  {
+    "question": "有调水调沙的情况下，未来10年河底高程会怎样变化？",
+    "answer_keywords": ["河底高程", "降低", "减少"]
+  },
+  {
+    "question": "ARIMA模型适用于什么类型的时间序列？",
+    "answer_keywords": ["平稳"]
+  },
+  {
+    "question": "文中提到的模型改进方向有哪些？",
+    "answer_keywords": ["神经网络", "灰色预测"]
+  },
+  {
+    "question": "该研究的方法可以推广到哪些其他领域？",
+    "answer_keywords": ["经济趋势", "气候变化", "其他河流"]
+  },
+  {
+    "question": "本文主要使用了哪两种算法模型？",
+    "answer_keywords": ["线性多元回归", "线性回归", "时间序列"]
+  },
+  {
+    "question": "问题一的数据分析和建模使用的是什么软件？",
+    "answer_keywords": ["MATLAB", "Matlab"]
+  },
+  {
+    "question": "问题三使用的是什么软件进行时间序列预测？",
+    "answer_keywords": ["SPSSPro", "SPSS", "spsspro"]
+  },
+  {
+    "question": "模型假设中，水位、水流量和含沙量之间存在什么关系？",
+    "answer_keywords": ["线性关系"]
+  },
+  {
+    "question": "模型假设中，黄河断面上不同位置的水沙特征被视为什么分布？",
+    "answer_keywords": ["均匀分布", "相似分布"]
+  },
+  {
+    "question": "观测数据的时间跨度是多少年？",
+    "answer_keywords": ["6年", "六年", "2016", "2021"]
+  },
+  {
+    "question": "2019年初含沙量有什么特点？",
+    "answer_keywords": ["2019", "最高"]
+  },
+  {
+    "question": "2018年9月之前水沙通量的突变情况如何？",
+    "answer_keywords": ["2018", "9月", "无明显", "无突出"]
+  },
+  {
+    "question": "判断水沙通量周期性使用了哪些统计函数？",
+    "answer_keywords": ["自相关", "ACF", "偏自相关", "PACF"]
+  },
+  {
+    "question": "文中引用的参考文献作者是谁？",
+    "answer_keywords": ["丁艳峰", "潘少明"]
+  },
+  {
+    "question": "问题四的对比实验设计思路是什么？",
+    "answer_keywords": ["剔除", "6月", "7月", "对比"]
+  },
+  {
+    "question": "含沙量与水流量的拟合使用了什么数学方法？",
+    "answer_keywords": ["最小二乘", "最小二乘法", "最小二乘拟合"]
+  },
+  {
+    "question": "指数函数拟合时m取值为多少？",
+    "answer_keywords": ["m=3", "三次多项式", "m取3", "三次"]
+  },
+  {
+    "question": "年总含沙量在文中用什么符号表示？",
+    "answer_keywords": ["K", "年总含沙量"]
+  },
+  {
+    "question": "六年总水流量在文中用什么符号表示？",
+    "answer_keywords": ["β", "六年总水流量", "总水流量"]
+  },
+  {
+    "question": "本文原始监测数据来源于什么格式的文件？",
+    "answer_keywords": ["Excel", "xlsx"]
+  },
+  {
+    "question": "季节性时间序列模型相比原有模型有什么优势？",
+    "answer_keywords": ["克服", "不足", "精准", "精确"]
+  },
+  {
+    "question": "ARIMA模型在处理大量数据时会出现什么问题？",
+    "answer_keywords": ["稳定性", "准确度", "降低", "下降"]
+  },
+  {
+    "question": "问题四预测的是未来多少年的河底高程变化？",
+    "answer_keywords": ["10年", "十年", "未来10年"]
+  },
+  {
+    "question": "本文的关键词包括哪些？",
+    "answer_keywords": ["黄河水沙治理", "线性多元回归", "水流量", "通沙量", "拟合"]
+  }
+]
