@@ -16,7 +16,7 @@ flowchart LR
 
 ### 2. 问答流（Query）——消息流转详图
 
-对应 `query.py` 中 `call_llm` 的完整执行逻辑：
+对应 `call_llm.py` 中 `call_llm` 的完整执行逻辑：
 
 ```mermaid
 flowchart TD
@@ -124,9 +124,10 @@ python query.py
 
 ```
 rag-knowledge-base/
+├── call_llm.py            # LLM 通信统一封装：CallParameters + ChatSession + 工具循环 + 重试
 ├── ingest.py              # 文档导入：解析 → 切分 → embedding → 存向量库
 ├── store.py               # 向量库封装（Chroma 增删查）+ bge-reranker 精排
-├── query.py               # 问答入口：Function Calling 多轮对话
+├── query.py               # 问答入口：组装 tool_map 与 CallParameters，调用 call_llm
 ├── eval.py                # 评测：跑 40 条问答对，算召回命中率
 ├── config.json            # 模型配置（模型名、温度、max_tokens 等）
 ├── requirements.txt       # Python 依赖
@@ -152,7 +153,8 @@ rag-knowledge-base/
 | **向量库** | Chroma（本地持久化，支持增量更新） |
 | **精排** | bge-reranker-v2-m3（CrossEncoder 本地推理） |
 | **LLM** | DeepSeek（Function Calling 模式） |
-| **工具调用** | 流式/非流式双路径，支持多轮工具循环 |
+| **工具调用** | 流式/非流式双路径，支持多轮工具循环；tool_map 直传字典分发工具 |
+| **上下文管理** | call_llm.py 支持 context_mode（none/recent/unlimited）历史裁剪，控制 token 消耗 |
 | **评测** | 40 条问答对关键词匹配，召回命中率 87.5% |
 
 ## 运行截图
