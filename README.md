@@ -53,6 +53,12 @@ flowchart TD
 
 > 注：若模型再次请求工具，会回到"获取工具数据"节点，形成多轮工具调用循环，直到模型不再请求工具为止。
 
+## 演示视频
+
+完整流程录屏（约 6 分钟）：文档导入 → 知识库问答（带引用溯源与拒答）→ 40 条评测集批量跑分。
+
+<video src="docs/demo.mp4" controls="controls" muted="muted" style="max-width:100%"></video>
+
 ## 快速开始
 
 ### 1. 环境准备
