@@ -57,7 +57,7 @@ flowchart TD
 
 完整流程录屏（约 6 分钟）：文档导入 → 知识库问答（带引用溯源与拒答）→ 40 条评测集批量跑分。
 
-<video src="docs/demo.mp4" controls="controls" muted="muted" style="max-width:100%"></video>
+[![演示视频封面：问答带引用与评测跑分](docs/demo-cover.jpg)](docs/demo.mp4)
 
 ## 快速开始
 
